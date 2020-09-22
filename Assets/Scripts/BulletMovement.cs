@@ -24,13 +24,13 @@ public class BulletMovement : MonoBehaviour
     {
         if (playerTrans.localScale.x > 0)
         {
-            bulletRb.velocity = new Vector2(bulletSpeed, bulletRb.velocity.y);
-            transform.localScale = new Vector3(0.01776046f, 0.03284102f, 1);
+            bulletRb.velocity = new Vector2(bulletSpeed * Time.deltaTime, bulletRb.velocity.y);
+            transform.localScale = new Vector3(0.05f, 0.05f, 1);
         }
         else if(playerTrans.localScale.x < 0)
         {
-            bulletRb.velocity = new Vector2(-bulletSpeed, bulletRb.velocity.y);
-            transform.localScale = new Vector3(-0.01776046f, 0.03284102f, 1);
+            bulletRb.velocity = new Vector2(-bulletSpeed * Time.deltaTime, bulletRb.velocity.y);
+            transform.localScale = new Vector3(-0.05f, 0.05f, 1);
         }
 
     }

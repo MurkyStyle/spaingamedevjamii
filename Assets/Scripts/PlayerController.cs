@@ -10,6 +10,9 @@ public class PlayerController : MonoBehaviour
     public Transform footRef;
     public float velX;
 
+    public Transform bulletSpawner;
+    public GameObject bulletPrefab;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +36,11 @@ public class PlayerController : MonoBehaviour
                 ForceMode2D.Impulse
                 );
         }
+
+        if (movX < 0) transform.localScale = new Vector3(-1, 1, 1);
+        if (movX > 0) transform.localScale = new Vector3(1, 1, 1);
+
+        PlayerShooting();
     }
 
     private void FixedUpdate()
@@ -42,5 +50,13 @@ public class PlayerController : MonoBehaviour
         Vector3 camFinalPos = transform.position - new Vector3(0, 0, 20);
 
         Camera.main.transform.position = Vector3.Lerp(camStartPos,camFinalPos,.05f);        
+    }
+
+    public void PlayerShooting()
+    {
+        if (Input.GetButtonDown("Fire1"))
+        {
+            Instantiate(bulletPrefab, bulletSpawner.position, bulletSpawner.rotation);
+        }
     }
 }

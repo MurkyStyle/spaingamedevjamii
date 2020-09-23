@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     float movX;
     bool movJump;
     float nextFireTime;
+    bool hugAttack;
+    Animator anim;
 
     void Awake()
     {
@@ -28,6 +30,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponentInChildren<Animator>();
     }
 
 
@@ -35,7 +38,8 @@ public class PlayerController : MonoBehaviour
     {
         // INPUTS
         movX = Input.GetAxis("Horizontal");
-        movJump = Input.GetButtonDown("Jump");        
+        movJump = Input.GetButtonDown("Jump");
+        hugAttack = Input.GetButtonDown("Hug");
 
         // Jump
         onGround = Physics2D.OverlapCircle(footRef.position, 1, 1 << 8); // cuando el pie está cerca del suelo
@@ -43,7 +47,12 @@ public class PlayerController : MonoBehaviour
         if (movJump && onGround)
         {
             PlayerJump();
+            anim.SetBool("jump", true);
         }
+        //else
+        //{
+        //    anim.SetBool("jump", false);
+        //}
         
         // Shoot
         if (Time.time > nextFireTime)
@@ -64,12 +73,31 @@ public class PlayerController : MonoBehaviour
                 nextFireTime = Time.time + cooldownTime;
             }
         }
+
+        // Hug
+
+        if (hugAttack)
+        {
+            Debug.Log("Abrazo Fuerte!");
+        }
+
+        // Anim
+
+        if(movX != 0 && onGround )
+        {
+            anim.SetBool("run", true);
+        }
+        else
+        {
+            anim.SetBool("run", false);
+        }
+
     }
 
     private void FixedUpdate()
     {
         //player movement
-        rb.velocity = new Vector2(velX * movX * Time.deltaTime, rb.velocity.y);
+        rb.velocity = new Vector2(velX * movX * Time.fixedDeltaTime, rb.velocity.y);
 
         if (movX < 0) transform.localScale = new Vector3(-1, 1, 1);
         if (movX > 0) transform.localScale = new Vector3(1, 1, 1);
@@ -92,5 +120,13 @@ public class PlayerController : MonoBehaviour
                 new Vector2(0, jumpForce),
                 ForceMode2D.Impulse
                 );
+        anim.SetBool("jump", false);
+    }
+
+    //TODO: cuando colisione con enemigos
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //TODO: si salta sobre enemigo confusión
+        //TODO: si abraza al enemigo dolor y culpa y está de color azul
     }
 }

@@ -1328,6 +1328,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: plataforma (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 1839067584444839889, guid: d18ff9c66243931489911e3dedf0d87a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 3502701526593148583, guid: d18ff9c66243931489911e3dedf0d87a,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1723,6 +1728,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: plataforma (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1839067584444839889, guid: d18ff9c66243931489911e3dedf0d87a,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3502701526593148583, guid: d18ff9c66243931489911e3dedf0d87a,
         type: 3}

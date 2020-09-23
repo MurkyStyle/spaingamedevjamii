@@ -47,17 +47,17 @@ PrefabInstance:
     - target: {fileID: 1839067584444839889, guid: d18ff9c66243931489911e3dedf0d87a,
         type: 3}
       propertyPath: m_Name
-      value: plataforma (3)
+      value: Plataforma_subir
       objectReference: {fileID: 0}
     - target: {fileID: 3502701526593148583, guid: d18ff9c66243931489911e3dedf0d87a,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 63.319324
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3502701526593148583, guid: d18ff9c66243931489911e3dedf0d87a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.25
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3502701526593148583, guid: d18ff9c66243931489911e3dedf0d87a,
         type: 3}

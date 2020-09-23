@@ -53,11 +53,18 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\Enemies\EnemyCore.cs" />
+<<<<<<< HEAD
     <Compile Include="Assets\Scripts\Plataforma.cs" />
     <Compile Include="Assets\Scripts\Creacion.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Enemies\ContactPowers\ContactPowerWrath.cs" />
     <Compile Include="Assets\Scripts\BulletMovement.cs" />
+=======
+    <Compile Include="Assets\Scripts\Creacion.cs" />
+    <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Enemies\ContactPowers\ContactPowerWrath.cs" />
+    <Compile Include="Assets\Scripts\Player\BulletMovement.cs" />
+>>>>>>> player
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

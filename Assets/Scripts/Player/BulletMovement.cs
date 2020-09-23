@@ -24,20 +24,33 @@ public class BulletMovement : MonoBehaviour
     {
         if (playerTrans.localScale.x > 0)
         {
-            bulletRb.velocity = new Vector2(bulletSpeed * Time.deltaTime, bulletRb.velocity.y);
+            bulletRb.velocity = new Vector2(bulletSpeed, bulletRb.velocity.y);
             transform.localScale = new Vector3(0.05f, 0.05f, 1);
         }
         else if(playerTrans.localScale.x < 0)
         {
-            bulletRb.velocity = new Vector2(-bulletSpeed * Time.deltaTime, bulletRb.velocity.y);
+            bulletRb.velocity = new Vector2(-bulletSpeed, bulletRb.velocity.y);
             transform.localScale = new Vector3(-0.05f, 0.05f, 1);
         }
-
     }
 
     // Update is called once per frame
     void Update()
     {
         Destroy(gameObject, bulletLife);
+    }
+
+    //TODO: si impacta contra enemigo
+    private void OnTriggerEnter2D(Collider2D col)
+    {
+        //TODO: si impacta contra enemigo ira y enojo y es bala corazón
+        //TODO: si impacta contra enemigo tristeza y es bala sonrisa
+        //TODO: si impacta contra enemigo realidad y es bala Sí
+
+        //if(col.GetComponent<LayerMask>() == LAYER)
+        //{
+        //    Destroy(this.gameObject);
+        //}
+        
     }
 }

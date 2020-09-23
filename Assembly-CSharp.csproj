@@ -52,7 +52,10 @@
     <UnityVersion>2020.1.6f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Enemies\EnemyCore.cs" />
+    <Compile Include="Assets\Scripts\Creacion.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Enemies\ContactPowers\ContactPowerWrath.cs" />
     <Compile Include="Assets\Scripts\BulletMovement.cs" />
   </ItemGroup>
   <ItemGroup>

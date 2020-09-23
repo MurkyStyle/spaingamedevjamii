@@ -18,7 +18,7 @@ public class Creacion : MonoBehaviour
         nextPointPlataformas = pointPlataforma.transform;
         GenerarSuelo();
         GenerarPlataformas();
-        GenerarEnemigos();
+        //GenerarEnemigos();
     }
 
     private void GenerarSuelo()
